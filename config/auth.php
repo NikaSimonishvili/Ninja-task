@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'custom_token' => [
+            'driver' => 'access_token',
+            'provider' => 'users',
+        ],
     ],
 
     /*
@@ -64,11 +69,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'custom_provider' => [
+            'driver' => 'access_token',
+            'model' => App\Models\User::class, // Replace with your user model
+        ],
     ],
 
     /*

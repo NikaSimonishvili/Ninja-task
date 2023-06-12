@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_verified'
     ];
 
     /**
@@ -42,4 +43,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function accessTokens()
+    {
+        return $this->hasMany(UserToken::class);
+    }
+
+    public function requestLogs()
+    {
+        return $this->hasMany(UserRequestLogs::class);
+    }
 }
